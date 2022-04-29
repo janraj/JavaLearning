@@ -1,19 +1,23 @@
 package com.course.CourseApp;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import java.math.BigInteger;
 
 @Entity
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Course {
     @Id
-    private int id;
+    private BigInteger id;
     private String course;
     private String author;
 
     public Course() {
     }
 
-    public int getId() {
+    public BigInteger getId() {
         return id;
     }
 
@@ -24,7 +28,9 @@ public class Course {
     public String getAuthor() {
         return author;
     }
-
+    public void setID(BigInteger id) {
+        this.id = id;
+    }
     public void setCourse(String course) {
         this.course = course;
     }

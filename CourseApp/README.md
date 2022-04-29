@@ -20,3 +20,10 @@ Create sqite3 Table locally on Mac
   6.  .tables
   7.  .schema course
 CREATE TABLE course(id BIGINT NOT NULL, courseName VARCHAR, authorName VARCHAR, PRIMARY KEY (id));
+
+
+POST TEST BY CURL:
+     curl -X POST localhost:8080/courses -H "Content-Type: application/json" -d '{"id": 6, "course": "This is test", "author": "ILU"}'
+
+DELETE TEST BY CURL:
+     curl -x DELETE localhost:8080/courses/6
